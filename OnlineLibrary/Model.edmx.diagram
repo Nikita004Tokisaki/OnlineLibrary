@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e33f35b9d8c64e88af072538bc92db07" Name="Diagram1">
+        <EntityTypeShape EntityType="OnlineLibraryModel.AuthorRequests" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineLibraryModel.BookFreezeAppeals" Width="1.5" PointX="5.25" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineLibraryModel.Books" Width="1.5" PointX="3" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineLibraryModel.Complaints" Width="1.5" PointX="3" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineLibraryModel.Genres" Width="1.5" PointX="5.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineLibraryModel.Reviews" Width="1.5" PointX="8.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineLibraryModel.UnfreezeRequests" Width="1.5" PointX="3" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineLibraryModel.UserBooks" Width="1.5" PointX="8.25" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="OnlineLibraryModel.Users" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <AssociationConnector Association="OnlineLibraryModel.FK__AuthorReq__Admin__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineLibraryModel.FK__AuthorReq__UserI__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineLibraryModel.FK__BookFreez__Admin__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineLibraryModel.FK__BookFreez__Autho__6EF57B66" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineLibraryModel.FK__BookFreez__BookI__6E01572D" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineLibraryModel.FK__Books__AuthorId__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineLibraryModel.FK__Reviews__BookId__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineLibraryModel.FK__UserBooks__BookI__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineLibraryModel.FK__Complaint__Admin__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineLibraryModel.FK__Complaint__Compl__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineLibraryModel.FK__Reviews__UserId__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineLibraryModel.FK__UnfreezeR__Admin__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineLibraryModel.FK__UnfreezeR__UserI__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineLibraryModel.FK__UserBooks__UserI__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="OnlineLibraryModel.BookGenres" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

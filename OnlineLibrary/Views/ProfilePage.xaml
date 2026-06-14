@@ -1,0 +1,80 @@
+﻿<Page x:Class="OnlineLibrary.Views.ProfilePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OnlineLibrary.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Профиль" Background="#F0F2F5">
+
+    <ScrollViewer Margin="20" VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+            <Border Background="White" CornerRadius="10" Padding="20" Margin="0,0,0,15">
+                <StackPanel>
+                    <TextBlock Text="👤 Информация о пользователе" FontSize="18" FontWeight="Bold" Margin="0,0,0,15"/>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="Имя:" FontWeight="Bold" Margin="0,5" Grid.Row="0"/>
+                        <TextBlock x:Name="txtName" Grid.Column="1" Margin="0,5" Grid.Row="0"/>
+
+                        <TextBlock Text="Логин:" FontWeight="Bold" Margin="0,5" Grid.Row="1"/>
+                        <TextBlock x:Name="txtLogin" Grid.Column="1" Margin="0,5" Grid.Row="1"/>
+
+                        <TextBlock Text="Email:" FontWeight="Bold" Margin="0,5" Grid.Row="2"/>
+                        <TextBlock x:Name="txtEmail" Grid.Column="1" Margin="0,5" Grid.Row="2"/>
+
+                        <TextBlock Text="Роль:" FontWeight="Bold" Margin="0,5" Grid.Row="3"/>
+                        <TextBlock x:Name="txtRole" Grid.Column="1" Margin="0,5" Grid.Row="3"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+            <Border x:Name="warningBorder" Background="#FEF3C7" Padding="15" CornerRadius="10" Margin="0,0,0,15" Visibility="Collapsed">
+                <StackPanel>
+                    <TextBlock Text="⚠️ Аккаунт заморожен" FontSize="16" FontWeight="Bold" Foreground="#D97706"/>
+                    <TextBlock x:Name="txtReason" TextWrapping="Wrap" Margin="0,10,0,10" FontSize="13"/>
+                    <Button x:Name="btnAppeal" Content="Оспорить заморозку" Style="{StaticResource PrimaryButton}" Width="150" Height="35" Click="BtnAppeal_Click"/>
+                </StackPanel>
+            </Border>
+
+            <Border x:Name="authorBorder" Background="White" CornerRadius="10" Padding="20" Margin="0,0,0,15" Visibility="Collapsed">
+                <StackPanel>
+                    <TextBlock Text="✍️ Стать автором" FontSize="16" FontWeight="Bold"/>
+                    <TextBlock Text="Хотите публиковать свои книги?" TextWrapping="Wrap" Margin="0,10,0,10" FontSize="13"/>
+                    <Button x:Name="btnAuthorRequest" Content="Подать заявку" Style="{StaticResource PrimaryButton}" Width="150" Height="35" Click="BtnAuthorRequest_Click"/>
+                </StackPanel>
+            </Border>
+
+            <Border Background="White" CornerRadius="10" Padding="20">
+                <StackPanel>
+                    <TextBlock Text="📝 Мои отзывы" FontSize="16" FontWeight="Bold" Margin="0,0,0,15"/>
+                    <ItemsControl x:Name="reviewsList">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border Background="#F5F5F5" Padding="12" CornerRadius="8" Margin="0,0,0,8">
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding BookTitle}" FontWeight="Bold" FontSize="14"/>
+                                        <TextBlock Text="★ " Foreground="Gold" Margin="0,5,0,0"/>
+                                        <TextBlock Text="{Binding Rating}" Margin="0,-18,0,0"/>
+                                        <TextBlock Text="{Binding Content}" TextWrapping="Wrap" Margin="0,10,0,0" FontSize="13"/>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

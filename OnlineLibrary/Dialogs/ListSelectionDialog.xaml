@@ -1,0 +1,18 @@
+﻿<Window x:Class="OnlineLibrary.Dialogs.ListSelectionDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OnlineLibrary.Dialogs"
+        mc:Ignorable="d"
+        Title="Выбор списка" Height="280" Width="280" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <Border Background="White" CornerRadius="10" Padding="10">
+        <StackPanel>
+            <TextBlock Text="В какой список?" FontSize="16" FontWeight="Bold" TextAlignment="Center"/>
+            <Button x:Name="btnPlanned" Content="📋 В планах" Margin="0,10" Height="40" Background="#3498DB" Foreground="White" Click="BtnPlanned_Click"/>
+            <Button x:Name="btnReading" Content="📖 Читаю" Margin="0,5" Height="40" Background="#2ECC71" Foreground="White" Click="BtnReading_Click"/>
+            <Button x:Name="btnCompleted" Content="✅ Прочитано" Margin="0,5" Height="40" Background="#9B59B6" Foreground="White" Click="BtnCompleted_Click"/>
+            <Button x:Name="btnAbandoned" Content="❌ Заброшено" Margin="0,5" Height="40" Background="#E74C3C" Foreground="White" Click="BtnAbandoned_Click"/>
+        </StackPanel>
+    </Border>
+</Window>

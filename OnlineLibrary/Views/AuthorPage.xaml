@@ -1,0 +1,47 @@
+﻿<Page x:Class="OnlineLibrary.Views.AuthorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OnlineLibrary.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AuthorPage" Background="White">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="✍️ Страница автора" FontSize="20" FontWeight="Bold" Margin="0,0,0,15"/>
+        <WrapPanel Grid.Row="1" Margin="0,0,0,15">
+            <Button x:Name="btnAddBook" Content="Добавить книгу" Style="{StaticResource PrimaryButton}" Click="BtnAddBook_Click"/>
+            <Button x:Name="btnFrozen" Content="Замороженные" Style="{StaticResource PrimaryButton}" Margin="10,0,0,0" Click="BtnFrozen_Click"/>
+        </WrapPanel>
+        <ScrollViewer Grid.Row="2">
+            <ItemsControl x:Name="booksList">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Background="White" Padding="15" CornerRadius="8" Margin="0,5">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Title}" FontWeight="Bold"/>
+                                    <TextBlock Text="★ {Binding AvgRating}" Foreground="Gold"/>
+                                </StackPanel>
+                                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                    <Button Content="Ред." Style="{StaticResource PrimaryButton}" Width="60" Click="BtnEdit_Click" Tag="{Binding BookId}"/>
+                                    <Button Content="Открыть" Style="{StaticResource PrimaryButton}" Width="70" Margin="5,0,0,0" Click="BtnOpen_Click" Tag="{Binding BookId}"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</Page>
